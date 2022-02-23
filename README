@@ -1,16 +1,18 @@
-====ID====
-208880690
+EXE #2 in Computer Communication course
 
-====Name and ID====
-Yoel Abecassis 208880690
+The proxy server gets an HTTP request from the client and performs some predefined checks on it.
+If the request is found legal, it first searches for the requested file in its local filesystem, if it’s saved locally, the proxy creates an
+HTTP response and return the file, otherwise, it forwards the request to the appropriate web server, and sends the response back to the client.
+If the request is not legal, it sends an error response to the client without sending
+anything to the server. Only IPv4 connections is supported.
 
-====Exercise name====
-HTTP Proxy Server
+The server uses a Thread Pool in order to handle several cliets at a time.
 
 ====Submitted files====
-proxyServer.c - The server
-threadpool.c - The threads pool
-README - My details and sumbited files
+filter.txt - An example of URLs and IPs that can be filtered (403 Forbidden).
+proxyServer.c - The server.
+threadpool.c - The threads pool.
+threadpool.h - The threads pool file header.
 
 ====Remarks====
 how to compile: gcc proxyServer.c threadpool.c -lpthread -o proxy1
