@@ -1,0 +1,19 @@
+====ID====
+208880690
+
+====Name and ID====
+Yoel Abecassis 208880690
+
+====Exercise name====
+HTTP Proxy Server
+
+====Submitted files====
+proxyServer.c - The server
+threadpool.c - The threads pool
+README - My details and sumbited files
+
+====Remarks====
+how to compile: gcc proxyServer.c threadpool.c -lpthread -o proxy1
+how to run: ./proxy1 <port> <pool-size> <max-number-of-request> <filter-path>
+
+

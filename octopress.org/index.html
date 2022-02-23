@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Octopress</title>
+  <meta name="author" content="Brandon Mathis">
+  <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://octopress.org/">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Octopress" type="application/atom+xml">
+  
+
+<!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10876422-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+   
+  <link href="/octopress-favicon.png" rel="icon">
+</head>
+
+<body   class="no-sidebar"  >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Octopress</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="octopress.org">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/docs">Documentation</a></li>
+  <li><a href="/help">Help</a></li>
+  <li><a href="http://github.com/imathis/octopress">Source</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
+      
+  <header>
+    <h1 class="entry-title">
+
+<a href="/2015/01/15/octopress-3.0-is-coming/">Octopress 3.0 Is Coming</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-15T13:07:00-06:00" pubdate data-updated="true">Jan 15<span>th</span>, 2015</time>
+         &bull; <a rel="bookmark" href="/2015/01/15/octopress-3.0-is-coming/">Permalink</a>
+      </p>
+    
+  </header>
+
+<div class="entry-content"><p>The way Octopress is being distributed and maintained is nearing its end. There are many things I&#39;ve always disliked about how Octopress works. So before I talk about the exciting part, I&#39;d like to tell you what&#39;s wrong with Octopress.</p>
+
+<h3>What&#39;s wrong?</h3>
+
+<p>If I&#39;m being harsh, I&#39;ll tell you that as it is now, Octopress is basically some guy&#39;s Jekyll blog you can fork and modify. The first, and most obvious flaw, is that Octopress is distributed through Git. I want to punch through a wall when I think about users wrestling with merge conflicts from updating their sites. It’s absurd.</p>
+
+<p>Octopress is released as a single product, but it&#39;s a collection of plugins and configurations which are hard to disentangle. if you want to change or remove anything you&#39;re leaving the &quot;golden path&quot; and updates will be painful, if not impossible — short of copy and paste. Even <em>I</em> can&#39;t remove things from Octopress. If I want to stop maintaining a plugin it will also disappear for anyone who updates. While some have suggested using Git tags as a kind of steam-punk versioning, that simply will not solve the real problem. This isn&#39;t how software products should be distributed. Git is for collaborators; not users.</p>
+
+<p>Then there are the themes. I planned to create a system for distributing themes independently from Octopress, but I hadn’t solved it when I released 2.0. Even then, I&#39;ve come across quite a few websites with Octopress theme galleries. While there are some nice ones, they are all distributed through git and installed with an ill-conceived rake task that was never meant to be used for this. All of this is a constant reminder that many people are spending time building on my mistakes.</p>
+
+<p><span class="pullquote-right" data-pullquote="The part I dislike the most is the notion that Octopress and Jekyll are different communities."></span>However, the part I dislike the most is the notion that Octopress and Jekyll are different communities. Because Octopress is single product with a theme, plugins, and command line automation, the best I could offer the Jekyll community was a pile of source code. It was effectively a salvage yard of ideas on Jekyll blogging.</p>
+
+<p>I&#39;ve spent the two and a half years working on the next version of Octopress. Two years ago, Parker Moore joined the team and with his help. I’ve finally built something I’m proud of.</p>
+
+<h3>What&#39;s coming?</h3>
+
+<p>This release is a full rewrite. Octopress as it is now will be replaced by a selection of gems, each semantically versioned with is own documentation and tests. Of the gems I’ve written for this release, some are replacements for plugins that were originally integrated into Octopress and others are completely new. I will be working on a migration guide for current Octopress users, but each plugin can be used on any Jekyll site. <strong>There will no longer be a division between Octopress and Jekyll.</strong></p>
+
+<p>Here’s a brief overview of the core components of the new Octopress.</p>
+
+<p><strong>The Octopress CLI</strong> replaces the old Rakefile and has some new tricks too. With <a href="https://github.com/octopress/octopress">octopress</a> and the <a href="https://github.com/octopress/deploy">octopress-deploy</a> gem you can:</p>
+
+<ul>
+<li>Quickly create new pages, posts, drafts, and collections.</li>
+<li>Upgrade your drafts workflow with the <code>publish</code> and <code>unpublish</code> commands.</li>
+<li>Use templates, like: <code>octopress new post --template sponsor</code>.</li>
+<li>Deploy via Git, Rsync, and S3.</li>
+<li>View local documentation with the <code>docs</code> command.</li>
+</ul>
+
+<p>That last one is actually pretty neat. Each Octopress gem integrates its documentation with the Octopress CLI so when you run <code>octopress docs</code> from your site, you’ll see the documentation for the exact version of every plugin your site is using. Switch to a different site with different plugins and you’ll see a different docs site. Third-party gem-based plugin can easily integrate their documentation too. I’m even using this documentation system to build the new Octopress website.</p>
+
+<p><a href="https://github.com/octopress/ink">Octopress Ink</a> is a framework I’ve built for helping plugin authors rapidly build powerful plugins and themes for Jekyll sites. It has some crazy cool features.</p>
+
+<ul>
+<li>Plugins are easily installed and removed; they only affect the build. A user&#39;s source is left alone.</li>
+<li>Use a plugin&#39;s layouts, includes, pages and files right from the gem, for example: <code>&#123;% include twitter:feed.html %&#125;</code>.</li>
+<li>Plugin Javascripts, Stylesheets, images, fonts, etc. are easily integrated.</li>
+<li>Each plugin’s javascripts and stylesheets are compiled, compressed, and fingerprinted automatically.</li>
+<li>Users can override or disable any component of a plugin.</li>
+<li>Each plugin is configured independently at <code>_plugins/plugin_name/config.yml</code>, so no more pollution of Jekyll&#39;s _config.yml.</li>
+<li>Generate a plugin scaffold with <code>octopress ink new &lt;PLUGIN_NAME&gt;</code> and build powerful, gem-based plugins quickly.</li>
+</ul>
+
+<p>In order to remain sane working on all this, I created some new developer tools as well. If you are building Jekyll plugins or even just working with advanced templates, these should be helpful.</p>
+
+<p><a href="https://github.com/imathis/clash">Clash</a> is a simple static-site test suite. It can build Jekyll sites with different configurations and it compares output with a simple but powerful diff system.</p>
+
+<p><a href="https://github.com/octopress/debugger">Octopress Debugger</a> lets you add a Liquid tag <code>&#123;% debug %&#125;</code>, to your sites and interact with the <code>site</code>, <code>page</code> and, <code>scopes</code> instances in an interactive ruby console. This makes it easy to see how variables are set, or even step through a for loop. It’s a cool way to see what Jekyll is doing under the hood as it builds your site.</p>
+
+<p>Finally, I’m working on a new theme. It’s called “Octopress Genesis”, and it will demonstrate many of the features of Octopress Ink and set a pattern for how Jekyll themes should be created. Once that’s finished, I’ll use it for the new docs site and launch this beast.</p>
+
+<p>There’s a lot more — around 30 gems at this point — and if you’re curious, you can browse the <a href="https://github.com/octopress">Octopress organization on GitHub</a>. Quite a few people have been using these plugins already and their issues and pull-requests have been a great help.</p>
+
+<h3>The release plan</h3>
+
+<p>For the release, I plan to do the following:</p>
+
+<ol>
+<li>Finish Octopress Genesis</li>
+<li>Write a migration guide</li>
+<li>Move the <code>master</code> branch to the <code>legacy</code> branch for maintenance releases and modify rake tasks accordingly.</li>
+<li>Move <code>imathis/octopress</code> to the Octopress org on GitHub.</li>
+<li>Release the new docs site.</li>
+<li>Release Octopress as 3.0 and Octopress Ink as 1.0</li>
+</ol>
+
+<p>After the release, I will begin closing out issues and pull requests that can be resolved by replacing old plugins with gems. Anyone who wants to help with that effort will earn a special place in my heart. Working on the “legacy codebase” is very challenging and I intend to avoid anything but critical updates in the future.</p>
+
+<p>Thanks to everyone for your help, encouragement, and patience as I figure out what I’m doing in public. I can’t wait to ship this and I look forward to a bright future with a better Octopress.</p>
+
+<p>— Brandon Mathis</p>
+</div>
+
+  <footer>
+    
+    
+  </footer>
+
+
+    </article>
+  
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
+      
+  <header>
+    <h1 class="entry-title">
+
+<a href="/2011/07/23/octopress-20-surfaces/">Octopress 2.0 Surfaces</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2011-07-23T18:05:00-05:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2011</time>
+         &bull; <a rel="bookmark" href="/2011/07/23/octopress-20-surfaces/">Permalink</a>
+      </p>
+    
+  </header>
+
+<div class="entry-content"><p>Octopress is a framework designed by <a href="http://brandonmathis.com">Brandon Mathis</a> for <a href="http://github.com/mojombo/jekyll">Jekyll</a>, the blog aware static site generator powering <a href="http://pages.github.com">Github Pages</a>.
+To start blogging with Jekyll, you have to write your own HTML templates, CSS, Javascripts and set up your configuration. But with Octopress
+All of that is already taken care of. Simply <a href="https://github.com/imathis/octopress">clone or fork Octopress</a>, install dependencies and the theme, and you&#39;re set.</p>
+
+<h2>What&#39;s new in 2.0?</h2>
+
+<p>Short answer: Everything. Octopress is now based on <a href="http://github.com/mojombo/jekyll">mojombo/jekyll</a> has been completely rewritten from the ground up with a mountain of goodies.</p>
+
+<p>Octopress comes with:</p>
+
+<ul>
+<li>A semantic HTML5 template</li>
+<li>A Mobile first responsive layout (rotate, or resize your browser and see)</li>
+<li>Built in 3rd party support for Twitter, Google Plus One, Disqus Comments, Pinboard, Delicious, and Google Analytics</li>
+<li>An easy deployment strategy using Github pages or Rsync</li>
+<li>Built in support for POW and Rack servers</li>
+<li>Easy theming with Compass and Sass</li>
+<li>A Beautiful <a href="http://ethanschoonover.com/solarized">Solarized</a> syntax highlighting</li>
+</ul>
+
+<p>Be sure to check out the <a href="/docs">documentation</a> to get the full scoop.</p>
+
+<h3>Plugins FTW</h3>
+
+<p>Most of these plugins have been created just for Octopress, but a few come from the Jekyll community along with improvements and updates.</p>
+
+<ul>
+<li><a href="/docs/plugins/video-tag">HTML5 Video Tag</a> - <em>easily post mp4 HTML5 video with flash player fallback</em></li>
+<li><a href="/docs/plugins/codeblock">Code Block</a> - <em>for easy inline code sharing</em></li>
+<li><a href="/docs/plugins/include-code">Include Code</a> - <em>embed code from your filesystem</em></li>
+<li><a href="/docs/plugins/gist-tag">Gist Tag</a> - <em>automatically downloads and embeds Github gists</em></li>
+<li><a href="/docs/plugins/image-tag">Image Tag</a> - <em>easily post images with class names and titles</em></li>
+<li><a href="/docs/plugins/render-partial">Render Partial</a> - <em>insert any file into another post or page</em></li>
+<li><a href="/docs/plugins/blockquote">Blockquote</a> - <em>generate beautiful, semantic block quotes</em></li>
+<li><a href="/docs/plugins/pullquote">Pullquote</a> - <em>generate CSS only pull quotes &mdash; no duplicate data, no javascript</em></li>
+<li><a href="/docs/plugins/category-generator">Category Generator</a> - <em>generates archive pages for each blog category</em></li>
+</ul>
+
+<p>For more plugins check out the <a href="/docs/plugins">plugin list</a></p>
+
+<h2>Ready to Get Started?</h2>
+
+<p>Octopress is really easy to set up and deploy, <a href="/docs/setup">start here</a>.</p>
+
+<p>For now that&#39;s it. Check out the <a href="/docs">docs</a>, <a href="http://github.com/imathis/octopress">kick the tires</a>, post <a href="http://github.com/imathis/octopress/issues">issues</a>, send me <a href="http://convore.com/octopress/support">support requests</a>, and tell all your friends.</p>
+
+<p>Oh, and if you like, follow <a href="http://twitter.com/octopress">@octopress</a> and <a href="http://twitter.com/imathis">@imathis</a> on Twitter.</p>
+</div>
+
+  <footer>
+    
+    
+  </footer>
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/archives">Blog Archives</a>
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Brandon Mathis -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+</body>
+</html>

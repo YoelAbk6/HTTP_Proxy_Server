@@ -1,0 +1,3 @@
+/home/student/CLionProjects/HTTP_Proxy_Server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/student/CLionProjects/HTTP_Proxy_Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/student/CLionProjects/HTTP_Proxy_Server/cmake-build-debug/CMakeFiles/HTTP_Proxy_Server.dir
